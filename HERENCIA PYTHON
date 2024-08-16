@@ -1,0 +1,39 @@
+#HERENCIA PYTHO
+class Vehiculo:
+    def __init__(self, fecha_fabricación, Chasis, Motor):
+        self.fecha_fabricación = fecha_fabricación
+        self.Chasis = Chasis
+        self.Motor = Motor
+
+    def obtener_fecha_fabricación(self):
+        return self.fecha_fabricación
+
+    def obtener_VIN_Chasis(self):
+        return self.Chasis
+
+    def obtener_VINMotor(self):
+        return self.Motor
+
+
+class Automovil(Vehiculo):
+    def __init__(self, fecha_fabricación, Chasis, Motor, marca, modelo, precio):
+        super().__init__(fecha_fabricación, Chasis, Motor)
+        self.marca = marca
+        self.modelo = modelo
+        self.precio = precio
+
+    def mostrar_datos(self):
+        print(f"Detalles del automóvil:")
+        print(f"Marca: {self.marca}")
+        print(f"Modelo: {self.modelo}")
+        print(f"Precio: ${self.precio}")
+        print(f"Fecha de fabricación: {self.obtener_fecha_fabricación()}")
+        print(f" chasis : {self.obtener_VIN_Chasis()}")
+        print(f" motor : {self.obtener_VINMotor()}")
+
+
+
+mi_auto = Automovil("2020", "2021", "XYZ789", "ferrari", "tcn923", 100000)
+
+
+mi_auto.mostrar_datos()
